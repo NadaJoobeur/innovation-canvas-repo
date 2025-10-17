@@ -87,16 +87,16 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className="glass-effect rounded-lg overflow-hidden glow-hover animate-fade-in"
+              className="glass-effect rounded-lg overflow-hidden glow-hover card-3d animate-slide-up group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative h-48 bg-muted overflow-hidden group">
+              <div className="relative h-48 bg-muted overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-2"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center gap-4 pb-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center gap-4 pb-6">
                   <a
                     href={project.github}
                     target="_blank"

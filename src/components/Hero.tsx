@@ -28,8 +28,14 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/15 rounded-full blur-3xl animate-pulse-glow"></div>
+        
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 right-20 w-20 h-20 border-2 border-primary/30 rounded-lg animate-spin-slow"></div>
+        <div className="absolute bottom-40 left-20 w-16 h-16 border-2 border-secondary/30 rounded-full animate-bounce-slow"></div>
+        <div className="absolute top-1/3 right-1/3 w-12 h-12 bg-accent/10 rounded-lg animate-wiggle"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10">
@@ -57,15 +63,15 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-300"
+              className="bg-gradient-primary hover:shadow-neon transition-all duration-500 hover:scale-105 animate-pulse-glow group"
               onClick={() => scrollToSection("projects")}
             >
-              View My Work
+              <span className="group-hover:animate-wiggle inline-block">View My Work</span>
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="glass-effect hover:bg-primary/10 transition-all duration-300"
+              className="glass-effect hover:bg-primary/20 hover:border-primary transition-all duration-500 hover:scale-105"
               onClick={() => scrollToSection("contact")}
             >
               Get In Touch
@@ -77,23 +83,23 @@ const Hero = () => {
               href="https://github.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full glass-effect glow-hover cursor-pointer"
+              className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon group"
             >
-              <Github className="w-6 h-6" />
+              <Github className="w-6 h-6 group-hover:scale-110 transition-transform" />
             </a>
             <a 
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full glass-effect glow-hover cursor-pointer"
+              className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon-secondary group"
             >
-              <Linkedin className="w-6 h-6" />
+              <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
             </a>
             <a 
               href="mailto:your.email@example.com"
-              className="p-3 rounded-full glass-effect glow-hover cursor-pointer"
+              className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon group"
             >
-              <Mail className="w-6 h-6" />
+              <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>

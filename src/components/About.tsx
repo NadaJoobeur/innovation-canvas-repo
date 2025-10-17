@@ -57,9 +57,10 @@ const About = () => {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="glass-effect p-6 rounded-lg glow-hover text-center"
+                className="glass-effect p-6 rounded-lg glow-hover card-3d text-center group hover:shadow-neon transition-all duration-500"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="inline-flex p-3 rounded-full bg-gradient-primary mb-4">
+                <div className="inline-flex p-3 rounded-full bg-gradient-primary mb-4 group-hover:animate-bounce-slow">
                   <item.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h3 className="font-semibold mb-2">{item.title}</h3>
