@@ -48,7 +48,7 @@ const Navigation = () => {
             }}
             className="text-2xl font-bold gradient-text cursor-pointer"
           >
-            Portfolio
+            NadaJoobeur
           </a>
 
           {/* Desktop Navigation */}

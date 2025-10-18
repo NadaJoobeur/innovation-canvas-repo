@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Portfolio. Made with{" "}
+              © {currentYear} NadaJoobeur. Made with{" "}
               <Heart className="inline w-4 h-4 text-primary animate-pulse" /> by a
               passionate developer
             </p>
@@ -17,7 +17,7 @@ const Footer = () => {
 
           <div className="flex gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/NadaJoobeur"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full glass-effect glow-hover"
@@ -26,7 +26,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/nada-joobeur-704461241/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full glass-effect glow-hover"
@@ -35,7 +35,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:nada.jbr725@gmail.com"
               className="p-2 rounded-full glass-effect glow-hover"
               aria-label="Email"
             >

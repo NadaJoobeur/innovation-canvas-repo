@@ -2,34 +2,64 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
-    {
+      {
       title: "Software Engineering Intern",
-      company: "Company Name 1",
-      location: "City, Country",
-      period: "Summer 2023",
-      description: "Worked on developing and maintaining web applications using modern technologies.",
+      company: "Proxym-IT Group",
+      location: "Sousse, Tunisia",
+      period: "Summer 2025",
+      description: "Designed and developed an internal platform standardizing key vehicle insurance processes, providing a modular, reusable technical base for future projects.",
       responsibilities: [
-        "Developed new features for the main product",
-        "Collaborated with senior developers on code reviews",
-        "Improved application performance by 30%",
-        "Participated in agile development processes",
+        "Designed and implemented a platform to standardize vehicle insurance workflows",
+        "Built modular and reusable code to accelerate future insurance projects",
+        "Collaborated with team members to ensure code quality and maintainability",
       ],
-      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL"],
+      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL","chakra-ui","REST API" ],
     },
     {
-      title: "Junior Developer Intern",
-      company: "Company Name 2",
-      location: "City, Country",
-      period: "Summer 2022",
-      description: "Gained hands-on experience in full-stack development and DevOps practices.",
-      responsibilities: [
-        "Built responsive user interfaces",
-        "Implemented RESTful APIs",
-        "Worked with CI/CD pipelines",
-        "Participated in team meetings and sprint planning",
-      ],
-      technologies: ["Vue.js", "Express", "MongoDB", "Docker"],
-    },
+    title: "AI & Software Engineering Intern",
+    company: "Lab_Tim Laboratory, Faculty of Medicine",
+    location: "Monastir, Tunisia",
+    period: "Summer 2024",
+    description: "Designed and trained U-Net models enhanced with Inception modules for brain lesion segmentation and built a web platform for medical image visualization, preprocessing, and prediction.",
+    responsibilities: [
+      "Developed U-Net models with Inception modules for brain lesion segmentation",
+      "Built a web platform for medical image visualization, preprocessing, and prediction",
+      "Implemented AI pipelines to streamline medical imaging workflows",
+      "Collaborated with researchers to optimize model performance",
+    ],
+    technologies: ["Python", "TensorFlow", "Keras", "React", "Flask"],
+  },
+   {
+  title: "Data Engineering Intern",
+  company: "TaDa Startup",
+  location: "Monastir, Tunisia",
+  period: "Summer 2024",
+  description: "Extracted and structured a database of over 70,000 entries from PDFs, APIs, and web sources, and automated data processing workflows to improve efficiency.",
+  responsibilities: [
+    "Extracted and structured data from PDFs, APIs, and web sources",
+    "Automated data processing pipelines, improving efficiency by 40%",
+    "Cleaned and validated large datasets to ensure accuracy",
+    "Collaborated with the team to integrate processed data into applications",
+  ],
+  technologies: ["Python", "Pandas", "SQL", "APIs", "ETL"],
+}
+,
+  {
+  title: "Cybersecurity Intern",
+  company: "L’EPI D’OR",
+  location: "Sousse, Tunisia",
+  period: "Summer 2023",
+  description: "Gained hands-on experience in Linux system administration and conducted comprehensive website vulnerability assessments and security scans.",
+  responsibilities: [
+    "Configured, monitored, and optimized Linux systems",
+    "Performed website vulnerability assessments and security scans",
+    "Identified and reported security issues with actionable recommendations",
+    "Collaborated with the team to improve system and network security",
+  ],
+  technologies: ["Linux", "Greenbone",  "Kali Linux"],
+}
+
+
   ];
 
   return (

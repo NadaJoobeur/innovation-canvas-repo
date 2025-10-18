@@ -37,19 +37,13 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-left">
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              I'm a passionate Software Engineer with a strong foundation in computer science
-              and a love for creating innovative solutions. My journey in technology has been
-              driven by curiosity and a constant desire to learn and grow.
+             I'm a third-year Software Engineering student passionate about building web applications that are both scalable and high-performance, often integrating AI solutions. I enjoy working on projects from start to finish—from design to deployment—and love finding creative, efficient ways to solve problems.
             </p>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Throughout my career, I've worked on various projects that have challenged me
-              to think critically and develop creative solutions. I believe in writing clean,
-              efficient code and always strive for excellence in everything I do.
+             Technology has always driven my curiosity, and I’m constantly looking to learn, grow, and explore new tools and ideas.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, I'm exploring new technologies, participating in hackathons,
-              and contributing to open-source projects. I'm always eager to collaborate and
-              learn from others in the tech community.
+             Outside of coding, I enjoy participating in hackathons, contributing to open-source projects, and collaborating with others in the tech community.
             </p>
           </div>
 

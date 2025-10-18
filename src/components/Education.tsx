@@ -3,25 +3,16 @@ import { GraduationCap, Calendar } from "lucide-react";
 const Education = () => {
   const educationData = [
     {
-      degree: "Bachelor's/Master's in Software Engineering",
-      institution: "Your University Name",
-      period: "2020 - 2024",
-      description: "Specialized in software development, algorithms, and system design. Maintained excellent academic performance.",
-      achievements: [
-        "Graduated with honors",
-        "Dean's list multiple semesters",
-        "Led student tech club",
-      ],
+      degree: "Software Engineering Cycle",
+      institution: "ISIMM – Software Engineering Cycle",
+      period: "2023 - Present",
+      
     },
     {
-      degree: "High School Diploma",
-      institution: "Your High School Name",
-      period: "2016 - 2020",
-      description: "Focus on mathematics and computer science.",
-      achievements: [
-        "Top of class in computer science",
-        "Participated in coding competitions",
-      ],
+      degree: "Integrated Preparatory Cycle",
+      institution: "ISIMM – Software Engineering Cycle",
+      period: "2021 - 2023",
+      
     },
   ];
 
@@ -65,15 +56,9 @@ const Education = () => {
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground mb-4">{item.description}</p>
 
                     <div className="space-y-2">
-                      {item.achievements.map((achievement, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                          <span className="text-sm">{achievement}</span>
-                        </div>
-                      ))}
+                    
                     </div>
                   </div>
                 </div>

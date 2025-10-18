@@ -1,70 +1,85 @@
 import { Trophy, Award, Medal, Star } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card } from "./ui/card";
 
 const Achievements = () => {
   const competitions = [
+{
+  title: "TWISE NIGHT",
+  position: "National Top 10",
+  date: "2025",
+  description: "Ranked among the top 10 nationally out of 100+ participants",
+},
+
     {
-      title: "International Coding Competition",
-      position: "1st Place",
-      date: "2023",
-      description: "Won first place among 500+ participants worldwide",
+      title: "Entrepreneurship Competition",
+      position: "Initiator Status",
+      date: "2025",
+      description: "Competition organized by the University of Monastir, where our team presented an innovative project idea.",
+  
     },
     {
-      title: "Hackathon Championship",
-      position: "Winner",
-      date: "2023",
-      description: "Led team to victory with innovative solution",
-    },
-    {
-      title: "Algorithm Challenge",
-      position: "Top 10",
-      date: "2022",
-      description: "Ranked in top 10 out of 1000+ competitors",
+      title: "La Nuit de l'Info",
+      position: "1st Place ",
+      date: "2024",
+      description: "National hackathon where our team developed an innovative web application in one night, guided by professional mentors and evaluated on design, architecture, and collaboration.",
     },
   ];
 
   const certificates = [
     {
-      title: "AWS Certified Solutions Architect",
+      title: " Cloud Foundations",
       issuer: "Amazon Web Services",
-      date: "2023",
+      date: "2025",
+      lien:"/cloudFnd.pdf",
     },
     {
-      title: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      date: "2023",
+      title: "Cloud Operations",
+      issuer: "Amazon Web Services",
+      date: "2025",
+       lien:"/cloudOpr.pdf",
     },
     {
-      title: "Microsoft Azure Fundamentals",
-      issuer: "Microsoft",
-      date: "2022",
+      title: "Create a VPC Using AWS",
+      issuer: "Coursera",
+      date: "2025",
+      lien:"/VPC.pdf",     
     },
     {
-      title: "Certified Kubernetes Administrator",
-      issuer: "CNCF",
-      date: "2022",
+      title: "Jenkins  : Automating your delivery pipeline",
+      issuer: "Coursera",
+      date: "2025",
+      lien:"/Jenkins.pdf",
+    },
+    
+    {
+      title: "Fundamentals of Deep Learning",
+      issuer: "NVIDIA",
+      date: "2024",
+      lien:"/DL.pdf",
+    },
+      {
+      title: "Building Transformer-Based NLP Applications",
+      issuer: "NVIDIA",
+      date: "2024",
+      lien:"/NLP.pdf",
     },
   ];
 
   const activities = [
     {
-      title: "Tech Club President",
-      organization: "University Tech Society",
-      period: "2022-2023",
-      description: "Led a team of 50+ members organizing workshops and events",
+      title: "General Secretary ",
+      organization: "IEEE Computer Society Chapter",
+      period: "2023-2024",
+  description: "Participated in and helped organize workshops and events, while reporting on activities and outcomes.",
     },
     {
-      title: "Open Source Contributor",
-      organization: "Various Projects",
-      period: "2020-Present",
-      description: "Active contributor to major open-source projects",
+      title: " International Relations Department",
+      organization: "AIESEC RUSPINA",
+      period: "2024",
+    description: "Facilitated international collaborations, coordinated projects, and actively contributed to global initiatives and open-source projects.",
     },
-    {
-      title: "Coding Mentor",
-      organization: "Code Academy",
-      period: "2021-2023",
-      description: "Mentored 30+ students in web development",
-    },
+   
   ];
 
   return (
@@ -110,28 +125,30 @@ const Achievements = () => {
             ))}
           </TabsContent>
 
-          <TabsContent value="certificates">
-            <div className="grid md:grid-cols-2 gap-6">
-              {certificates.map((cert, index) => (
-                <div
-                  key={index}
-                  className="glass-effect p-6 rounded-lg glow-hover animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-gradient-primary shrink-0">
-                      <Award className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold mb-1">{cert.title}</h3>
-                      <p className="text-sm text-primary mb-1">{cert.issuer}</p>
-                      <p className="text-xs text-muted-foreground">{cert.date}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </TabsContent>
+         <TabsContent value="certificates">
+  <div className="grid md:grid-cols-2 gap-6">
+    {certificates.map((cert, index) => (
+      <div
+        key={index}
+        className="glass-effect p-6 rounded-lg glow-hover animate-fade-in cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
+        style={{ animationDelay: `${index * 0.1}s` }}
+        onClick={() => window.open(cert.lien, "_blank")} // 🔹 ouvre le PDF dans un nouvel onglet
+      >
+        <div className="flex items-start gap-4">
+          <div className="p-3 rounded-full bg-gradient-primary shrink-0">
+            <Award className="w-6 h-6 text-primary-foreground" />
+          </div>
+          <div className="flex-1">
+            <h3 className="font-bold mb-1">{cert.title}</h3>
+            <p className="text-sm text-primary mb-1">{cert.issuer}</p>
+            <p className="text-xs text-muted-foreground">{cert.date}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</TabsContent>
+
 
           <TabsContent value="activities" className="space-y-6">
             {activities.map((activity, index) => (

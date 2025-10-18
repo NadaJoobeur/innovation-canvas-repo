@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import cv from "@/assets/cv.pdf";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -23,6 +24,9 @@ const Hero = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+   const openCV = () => {
+    window.open(cv, "_blank");
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -40,14 +44,10 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 rounded-full glass-effect text-sm font-medium mb-4">
-              Welcome to my portfolio
-            </span>
-          </div>
+         
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Hi, I'm <span className="gradient-text">Your Name</span>
+            Hi, I'm <span className="gradient-text">Nada</span>
           </h1>
           
           <div className="text-3xl md:text-5xl font-bold mb-8 min-h-[60px]">
@@ -64,9 +64,9 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-primary hover:shadow-neon transition-all duration-500 hover:scale-105 animate-pulse-glow group"
-              onClick={() => scrollToSection("projects")}
+              onClick={openCV}
             >
-              <span className="group-hover:animate-wiggle inline-block">View My Work</span>
+              <span className="group-hover:animate-wiggle inline-block">View My Resume</span>
             </Button>
             <Button 
               size="lg" 
@@ -80,7 +80,7 @@ const Hero = () => {
           
           <div className="flex gap-6 justify-center">
             <a 
-              href="https://github.com" 
+              href="https://github.com/NadaJoobeur" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon group"
@@ -88,7 +88,7 @@ const Hero = () => {
               <Github className="w-6 h-6 group-hover:scale-110 transition-transform" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/nada-joobeur-704461241/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon-secondary group"
@@ -96,7 +96,7 @@ const Hero = () => {
               <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
             </a>
             <a 
-              href="mailto:your.email@example.com"
+              href="mailto:nadajbr725@gmail.com"
               className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon group"
             >
               <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Code2, Database, Palette, Server, Smartphone, Cloud } from "lucide-react";
+import { Code2, Database, Palette, Server, Smartphone, Cloud ,Brain,Code} from "lucide-react";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,10 +27,10 @@ const Skills = () => {
       icon: Code2,
       title: "Frontend Development",
       skills: [
-        { name: "React / Next.js", level: 90 },
+        { name: "React ", level: 90 },
         { name: "TypeScript", level: 85 },
         { name: "Tailwind CSS", level: 95 },
-        { name: "Vue.js", level: 80 },
+        { name: "chakra_ui", level: 80 },
       ],
     },
     {
@@ -38,7 +38,7 @@ const Skills = () => {
       title: "Backend Development",
       skills: [
         { name: "Node.js / Express", level: 85 },
-        { name: "Python / Django", level: 80 },
+        { name: "Python / Flask", level: 80 },
         { name: "RESTful APIs", level: 90 },
         { name: "GraphQL", level: 75 },
       ],
@@ -49,7 +49,7 @@ const Skills = () => {
       skills: [
         { name: "PostgreSQL / MySQL", level: 85 },
         { name: "MongoDB", level: 80 },
-        { name: "Redis", level: 70 },
+        { name: "Hadoop/Apache Spark", level: 70 },
         { name: "Docker", level: 75 },
       ],
     },
@@ -57,30 +57,30 @@ const Skills = () => {
       icon: Cloud,
       title: "Cloud & DevOps",
       skills: [
-        { name: "AWS / Azure", level: 80 },
+        { name: "AWS ", level: 80 },
         { name: "CI/CD Pipelines", level: 75 },
         { name: "Kubernetes", level: 70 },
         { name: "Git / GitHub", level: 95 },
       ],
     },
     {
-      icon: Smartphone,
-      title: "Mobile Development",
+      icon: Brain,
+      title: "ML & DL",
       skills: [
-        { name: "React Native", level: 85 },
-        { name: "Flutter", level: 70 },
-        { name: "iOS / Android", level: 75 },
-        { name: "PWA", level: 85 },
+        { name: "CNNs", level: 85 },
+        { name: " LSTM", level: 70 },
+        { name: "TensorFlow / Keras", level: 75 },
+        { name: " U-Net architectures", level: 85 },
       ],
     },
     {
-      icon: Palette,
-      title: "Design & UX",
+      icon:Code,
+      title: "Programming",
       skills: [
-        { name: "UI/UX Design", level: 85 },
-        { name: "Figma / Adobe XD", level: 80 },
-        { name: "Responsive Design", level: 95 },
-        { name: "Animation", level: 85 },
+        { name: "Java", level: 85 },
+        { name: "Python", level: 80 },
+        { name: "C/C++", level: 95 },
+        { name: "R", level: 85 },
       ],
     },
   ];
