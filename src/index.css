@@ -63,6 +63,11 @@ All colors MUST be HSL.
                 radial-gradient(circle at 50% 50%, hsl(280 85% 65% / 0.05) 0%, transparent 50%),
                 hsl(240 10% 8%);
     background-attachment: fixed;
+    cursor: none;
+  }
+
+  a, button, [role="button"] {
+    cursor: none;
   }
 
   html {

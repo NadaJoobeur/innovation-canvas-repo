@@ -9,11 +9,17 @@ import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
+import CustomCursor from "@/components/CustomCursor";
+import ScrollProgress from "@/components/ScrollProgress";
+import FloatingShapes from "@/components/FloatingShapes";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative">
+      <CustomCursor />
+      <ScrollProgress />
       <ParticleBackground />
+      <FloatingShapes />
       <Navigation />
       <Hero />
       <About />

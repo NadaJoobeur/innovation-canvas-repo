@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import cv from "@/assets/cv.pdf";
+import SplitTextReveal from "./SplitTextReveal";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -55,10 +56,11 @@ const Hero = () => {
             <span className="animate-pulse">|</span>
           </div>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Passionate about creating innovative solutions and building amazing software experiences.
-            Specialized in full-stack development with a focus on modern technologies.
-          </p>
+          <SplitTextReveal 
+            text="Passionate about creating innovative solutions and building amazing software experiences. Specialized in full-stack development with a focus on modern technologies."
+            className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto"
+            delay={1500}
+          />
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 

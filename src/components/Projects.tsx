@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ExternalLink, Github, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Interactive3DCard from "./Interactive3DCard";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
@@ -104,10 +105,9 @@ const Projects = () => {
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
-            <div
+            <Interactive3DCard
               key={index}
-              className="glass-effect rounded-lg overflow-hidden glow-hover card-3d animate-slide-up group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="glass-effect rounded-lg overflow-hidden glow-hover animate-slide-up group"
             >
               <div className="relative h-48 bg-muted overflow-hidden">
                 <img 
@@ -152,7 +152,7 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </Interactive3DCard>
           ))}
         </div>
       </div>
