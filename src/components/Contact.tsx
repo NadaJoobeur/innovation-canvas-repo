@@ -1,18 +1,95 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name is too long"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email is too long"),
+  subject: z.string().trim().min(3, "Subject must be at least 3 characters").max(200, "Subject is too long"),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message is too long"),
+});
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+    // Clear error when user starts typing
+    if (errors[id]) {
+      setErrors(prev => ({ ...prev, [id]: "" }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
+    setIsSubmitting(true);
+    setErrors({});
+
+    try {
+      // Validate form data
+      const validatedData = contactSchema.parse(formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Create WhatsApp message with validated data
+      const whatsappMessage = encodeURIComponent(
+        `*New Contact Form Submission*\n\n` +
+        `*Name:* ${validatedData.name}\n` +
+        `*Email:* ${validatedData.email}\n` +
+        `*Subject:* ${validatedData.subject}\n` +
+        `*Message:*\n${validatedData.message}`
+      );
+      
+      // Open WhatsApp
+      window.open(`https://wa.me/21629884210?text=${whatsappMessage}`, '_blank');
+      
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      
+      // Reset form
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        // Handle validation errors
+        const newErrors: Record<string, string> = {};
+        error.errors.forEach((err) => {
+          if (err.path[0]) {
+            newErrors[err.path[0].toString()] = err.message;
+          }
+        });
+        setErrors(newErrors);
+        
+        toast({
+          title: "Validation Error",
+          description: "Please check the form fields and try again.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -83,66 +160,106 @@ const Contact = () => {
 
           <div className="animate-slide-in-right">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="glass-effect p-6 rounded-lg">
-                <div className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="text-sm font-medium mb-2 block">
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      placeholder="Your name"
-                      required
-                      className="bg-background/50"
-                    />
-                  </div>
+              <div className="glass-effect p-6 rounded-lg space-y-5">
+                <div>
+                  <label htmlFor="name" className="text-sm font-medium mb-2 block">
+                    Name <span className="text-destructive">*</span>
+                  </label>
+                  <Input
+                    id="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    className={`bg-background/50 transition-all ${errors.name ? 'border-destructive' : ''}`}
+                    disabled={isSubmitting}
+                  />
+                  {errors.name && (
+                    <p className="text-xs text-destructive mt-1">{errors.name}</p>
+                  )}
+                </div>
 
-                  <div>
-                    <label htmlFor="email" className="text-sm font-medium mb-2 block">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your.email@example.com"
-                      required
-                      className="bg-background/50"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="email" className="text-sm font-medium mb-2 block">
+                    Email <span className="text-destructive">*</span>
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com"
+                    className={`bg-background/50 transition-all ${errors.email ? 'border-destructive' : ''}`}
+                    disabled={isSubmitting}
+                  />
+                  {errors.email && (
+                    <p className="text-xs text-destructive mt-1">{errors.email}</p>
+                  )}
+                </div>
 
-                  <div>
-                    <label htmlFor="subject" className="text-sm font-medium mb-2 block">
-                      Subject
-                    </label>
-                    <Input
-                      id="subject"
-                      placeholder="What's this about?"
-                      required
-                      className="bg-background/50"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="subject" className="text-sm font-medium mb-2 block">
+                    Subject <span className="text-destructive">*</span>
+                  </label>
+                  <Input
+                    id="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Project inquiry"
+                    className={`bg-background/50 transition-all ${errors.subject ? 'border-destructive' : ''}`}
+                    disabled={isSubmitting}
+                  />
+                  {errors.subject && (
+                    <p className="text-xs text-destructive mt-1">{errors.subject}</p>
+                  )}
+                </div>
 
-                  <div>
-                    <label htmlFor="message" className="text-sm font-medium mb-2 block">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Your message..."
-                      rows={5}
-                      required
-                      className="bg-background/50 resize-none"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="message" className="text-sm font-medium mb-2 block">
+                    Message <span className="text-destructive">*</span>
+                  </label>
+                  <Textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project..."
+                    rows={5}
+                    className={`bg-background/50 resize-none transition-all ${errors.message ? 'border-destructive' : ''}`}
+                    disabled={isSubmitting}
+                  />
+                  {errors.message && (
+                    <p className="text-xs text-destructive mt-1">{errors.message}</p>
+                  )}
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {formData.message.length}/1000 characters
+                  </p>
+                </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all duration-300"
-                    size="lg"
-                  >
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </Button>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all duration-300 disabled:opacity-50"
+                  size="lg"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Send via WhatsApp
+                    </>
+                  )}
+                </Button>
+
+                <div className="glass-effect p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <p className="text-xs text-muted-foreground">
+                      Your message will be sent directly via WhatsApp. Make sure you have WhatsApp installed.
+                    </p>
+                  </div>
                 </div>
               </div>
             </form>
