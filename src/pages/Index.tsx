@@ -11,15 +11,15 @@ import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
-import FloatingShapes from "@/components/FloatingShapes";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative">
       <CustomCursor />
       <ScrollProgress />
+      <ScrollToTop />
       <ParticleBackground />
-      <FloatingShapes />
       <Navigation />
       <Hero />
       <About />
