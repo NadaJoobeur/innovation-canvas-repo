@@ -20,10 +20,6 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/15 rounded-full blur-3xl animate-pulse-glow"></div>
         
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 right-20 w-20 h-20 border-2 border-primary/30 rounded-lg animate-spin-slow"></div>
-        <div className="absolute bottom-40 left-20 w-16 h-16 border-2 border-secondary/30 rounded-full animate-bounce-slow"></div>
-        <div className="absolute top-1/3 right-1/3 w-12 h-12 bg-accent/10 rounded-lg animate-wiggle"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10">
@@ -38,11 +34,9 @@ const Hero = () => {
             <span className="gradient-text">Software Engineer</span>
           </div>
           
-          <SplitTextReveal 
-            text="Passionate about creating innovative solutions and building amazing software experiences. Specialized in full-stack development with a focus on modern technologies."
-            className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto"
-            delay={1500}
-          />
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Passionate about creating innovative solutions and building amazing software experiences. Specialized in full-stack development with a focus on modern technologies.
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 

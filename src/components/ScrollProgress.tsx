@@ -15,13 +15,14 @@ const ScrollProgress = () => {
     };
 
     window.addEventListener("scroll", updateScrollProgress);
+    updateScrollProgress();
     return () => window.removeEventListener("scroll", updateScrollProgress);
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-1 bg-muted/20 z-50">
+    <div className="fixed top-16 left-0 w-full h-1 bg-muted/30 z-[60]">
       <div
-        className="h-full bg-gradient-primary transition-all duration-300 shadow-neon"
+        className="h-full bg-gradient-primary transition-all duration-300"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>
