@@ -1,9 +1,25 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import cv from "@/assets/cv.pdf";
-import SplitTextReveal from "./SplitTextReveal";
 
 const Hero = () => {
+  const [displayedText, setDisplayedText] = useState("");
+  const fullText = "Software Engineer";
+  
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setDisplayedText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    
+    return () => clearInterval(timer);
+  }, []);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -30,8 +46,9 @@ const Hero = () => {
             Hi, I'm <span className="gradient-text">Nada</span>
           </h1>
           
-          <div className="text-3xl md:text-5xl font-bold mb-10">
-            <span className="gradient-text">Software Engineer</span>
+          <div className="text-3xl md:text-5xl font-bold mb-10 min-h-[60px]">
+            <span className="gradient-text">{displayedText}</span>
+            <span className="animate-pulse">|</span>
           </div>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
