@@ -64,6 +64,18 @@ const Achievements = () => {
       date: "2024",
       lien:"/NLP.pdf",
     },
+    {
+      title: "Kubernetes in AWS: Create Cluster in EKS in your own VPC",
+      issuer: "Coursera",
+      date: "2025",
+      lien:"/kubernetes_aws.pdf",
+    },
+    {
+      title: "Pod Management with Kubernetes: Run containerized workloads",
+      issuer: "Coursera",
+      date: "2025",
+      lien:"/Pod_kubernetes.pdf",
+    }
   ];
 
   const activities = [
@@ -74,10 +86,10 @@ const Achievements = () => {
   description: "Participated in and helped organize workshops and events, while reporting on activities and outcomes.",
     },
     {
-      title: " International Relations Department",
+      title: " International Relations & Data Department",
       organization: "AIESEC RUSPINA",
       period: "2024",
-    description: "Facilitated international collaborations, coordinated projects, and actively contributed to global initiatives and open-source projects.",
+    description: "Conducted international calls with representatives from multiple countries to build strategic collaborations, strengthen partnerships with the department, and support cross-border initiatives.",
     },
    
   ];

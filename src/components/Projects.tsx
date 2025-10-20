@@ -13,8 +13,7 @@ const Projects = () => {
       image: "/pharma.png",
       technologies: ["Python", "Electron.js","Machine Learning","AI"],
       category: "desktop",
-      github: "https://github.com/NadaJoobeur/Pharmaco",
-      live: "https://example.com",
+      github: "https://github.com/NadaJoobeur/pharmaco-dose-predictor.git",
     },
     {
       title: "EpilepTrack",
@@ -23,7 +22,6 @@ const Projects = () => {
       technologies:  ["React.js", "Flask", "MySQL", "Machine Learning", "AI", "Healthcare"],
       category: "web",
       github: "https://github.com/NadaJoobeur/AI-Powered-EEG-Triage-System",
-      live: "https://example.com",
     },
     {
       title: "MedVision",
@@ -32,7 +30,6 @@ const Projects = () => {
       technologies: ["React.js", "Flask", "MySQL", "AI", "Machine Learning"],
       category: "web",
       github: "https://github.com/NadaJoobeur/Medical-Research-Automation-Platform",
-      live: "https://example.com",
     },
     {
       title: "Occupational Risk Analysis for Female Agricultural Workers",
@@ -41,16 +38,14 @@ const Projects = () => {
       technologies: ["Python", "RandomForest", "XGBoost", "SMOTE"],
       category: "ai",
       github: "https://github.com/NadaJoobeur/agriculture-risques-analysis",
-      live: "https://example.com",
     },
        {
       title: "Arabic quotes classification",
       description: "This project focuses on the automatic classification of Arabic quotes into predefined thematic categories using Natural Language Processing (NLP) techniques. Given the linguistic richness and complexity of the Arabic language, our work aims to address its specific challenges through a complete pipeline of data collection, preprocessing, and classification.",
-      image: "/placeholder.svg",
+      image: "/NLP.jpg",
       technologies: ["Python", "Scikit-learn", "Tashaphyne", "BeautifulSoup"],
       category: "ai",
       github: "https://github.com/NadaJoobeur/agriculture-risques-analysis",
-      live: "https://example.com",
     },
     
        {
@@ -59,8 +54,7 @@ const Projects = () => {
       image: "/ISIMM.png",
       technologies: ["React.js", "Tailwind", "Node.js","MySQL"],
       category: "web",
-      github: "https://github.com/RefkaMechri/isimm?tab=readme-ov-file",
-      live: "https://example.com",
+      github: "https://github.com/NadaJoobeur/ISimm_Website",
     },
   ];
 
