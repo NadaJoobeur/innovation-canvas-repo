@@ -8,65 +8,114 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "PharmaLab – Fattouma Bourguiba Hospital",
-      description: "Desktop application automating clinical decision-making with AI-driven predictive models. Recommends optimal drug dosages and provides healthcare professionals with an intuitive interface to manage patient treatments.",
-      image: "/pharma.png",
-      technologies: ["Python", "Electron.js","Machine Learning","AI"],
-      category: "desktop",
-      github: "https://github.com/NadaJoobeur/pharmaco-dose-predictor.git",
+      title: "PharmaLink",
+      description: "Patient-pharmacy platform: medication search, reservations, and automated prescription reading through a dedicated OCR/LLM microservice. Deployed on AWS via Terraform (Auto Scaling Group, Application Load Balancer, RDS).",
+      image: "/pharmalink.png",
+      technologies: ["Angular", "Spring Boot", "FastAPI", "PostgreSQL", "Terraform", "AWS"],
+      category: "web",
+      github: "https://github.com/NadaJoobeur/PharmaLink",
     },
     {
-      title: "EpilepTrack",
-      description: "An AI-powered platform that assists non-specialists in interpreting EEG signals, developed in collaboration with doctors at Sahloul Hospital, and enabling remote validation by a neurophysiologist.",
-      image: "/epilepTrack.png",
-      technologies:  ["React.js", "Flask", "MySQL", "Machine Learning", "AI", "Healthcare"],
+      title: "CoreAssurance",
+      description: "Insurance management platform covering the full contract lifecycle: policyholders, quotes, contracts, coverage, agencies, payments, and claims.",
+      image: "/CoreAssurance.png",
+      technologies: ["React", "Node.js", "Express", "PostgreSQL"],
       category: "web",
-      github: "https://github.com/NadaJoobeur/AI-Powered-EEG-Triage-System",
+      github: "https://github.com/NadaJoobeur/CoreAssurance",
+    },
+    {
+      title: "docker-k8s-cicd-pipeline",
+      description: "End-to-end DevOps pipeline demo: a containerized web app deployed to Kubernetes through a full CI/CD pipeline with GitHub Actions, from build to automated deployment.",
+      image: "/docker-k8s-cicd-pipeline.png",
+      technologies: ["Docker", "Kubernetes", "GitHub Actions", "NGINX"],
+      category: "devops",
+      github: "https://github.com/NadaJoobeur/docker-k8s-cicd-pipeline",
+    },
+    {
+      title: "System Monitoring Dashboard",
+      description: "Real-time system monitoring dashboard tracking CPU, RAM, disk usage and uptime, built with Flask and Chart.js, containerized with Docker and automated with a GitHub Actions CI/CD pipeline.",
+      image: "/devops-project.png",
+      technologies: ["Flask", "Docker", "GitHub Actions", "Chart.js"],
+      category: "devops",
+      github: "https://github.com/NadaJoobeur/devops-project",
+    },
+    {
+      title: "PharmaLab – Fattouma Bourguiba Hospital",
+      description: "Desktop application automating clinical decision-making with AI-driven predictive models. Recommends optimal drug dosages and provides healthcare professionals with an intuitive interface to manage patient treatments.",
+      image: "/PharmaLab.png",
+      technologies: ["Python", "Electron.js", "Machine Learning"],
+      category: "desktop",
+      github: "https://github.com/NadaJoobeur/PharmaLab",
     },
     {
       title: "MedVision",
-      description: "Web-based platform for end-to-end medical data processing .Supports tabular data & medical images with experiment tracking",
-      image: "/medical.png",
-      technologies: ["React.js", "Flask", "MySQL", "AI", "Machine Learning"],
-      category: "web",
+      description: "Web-based platform for end-to-end medical data processing. Supports tabular data & medical images with experiment tracking.",
+      image: "/Medical-Research-Automation-Platform.png",
+      technologies: ["React.js", "Flask", "MySQL", "Machine Learning"],
+      category: "ai",
       github: "https://github.com/NadaJoobeur/Medical-Research-Automation-Platform",
+    },
+    {
+      title: "EpilepTrack",
+      description: "An AI-powered platform that assists non-specialists in interpreting EEG signals, developed in collaboration with doctors at Sahloul Hospital, enabling remote validation by a neurophysiologist.",
+      image: "/AI-Powered-EEG-Triage-System.png",
+      technologies: ["React.js", "Flask", "MySQL", "Machine Learning", "Healthcare"],
+      category: "ai",
+      github: "https://github.com/NadaJoobeur/AI-Powered-EEG-Triage-System",
+    },
+    {
+      title: "EEG Seizure Prediction",
+      description: "Machine learning pipeline for early epileptic seizure detection from EEG signals (CHB-MIT dataset): signal preprocessing, feature extraction, and SVM-based classification.",
+      image: "/eeg-seizure-prediction.png",
+      technologies: ["Python", "Signal Processing", "SVM", "Machine Learning"],
+      category: "ai",
+      github: "https://github.com/NadaJoobeur/eeg-seizure-prediction",
     },
     {
       title: "Occupational Risk Analysis for Female Agricultural Workers",
       description: "Machine learning project predicting occupational accidents among female agricultural workers, comparing Random Forest and optimized XGBoost models.",
-      image: "/agr.jpg",
-      technologies: ["Python", "RandomForest", "XGBoost", "SMOTE"],
+      image: "/agriculture-risques-analysis.jpg",
+      technologies: ["Python", "Random Forest", "XGBoost", "SHAP"],
       category: "ai",
       github: "https://github.com/NadaJoobeur/agriculture-risques-analysis",
     },
-       {
-      title: "Arabic quotes classification",
-      description: "This project focuses on the automatic classification of Arabic quotes into predefined thematic categories using Natural Language Processing (NLP) techniques. Given the linguistic richness and complexity of the Arabic language, our work aims to address its specific challenges through a complete pipeline of data collection, preprocessing, and classification.",
-      image: "/NLP.jpg",
-      technologies: ["Python", "Scikit-learn", "Tashaphyne", "BeautifulSoup"],
+    {
+      title: "Arabic Quotes Classification",
+      description: "Automatic classification of Arabic quotes into thematic categories using NLP, covering data collection, preprocessing, and model training on 23,000+ labeled samples.",
+      image: "/arabic-quotes-classification.jpg",
+      technologies: ["Python", "Scikit-learn", "NLP"],
       category: "ai",
-      github: "https://github.com/NadaJoobeur/agriculture-risques-analysis",
+      github: "https://github.com/NadaJoobeur/arabic-quotes-classification",
     },
-    
-       {
+    {
+      title: "simulateur-trafic",
+      description: "Traffic simulation engine modeling roads, vehicles, and traffic lights, with statistical analysis and congestion detection. Published on PyPI, tested with pytest, and integrated with CI via GitHub Actions.",
+      image: "/simulateur-trafic.png",
+      technologies: ["Python", "Cython", "pytest", "GitHub Actions"],
+      category: "tools",
+      github: "https://github.com/NadaJoobeur/simulateur-trafic",
+    },
+    {
       title: "ISIMM Website",
-      description: "The ISIMM website is an online platform dedicated to education, training, and professional development. It provides comprehensive information on training programs, educational resources, and events organized by the institute.",
-      image: "/ISIMM.png",
-      technologies: ["React.js", "Tailwind", "Node.js","MySQL"],
+      description: "Static showcase website for the ISIMM institute: departments, academic programs, events, and resources.",
+      image: "/ISIMM_Website.png",
+      technologies: ["React.js", "Tailwind", "Node.js", "MySQL"],
       category: "web",
-      github: "https://github.com/NadaJoobeur/ISimm_Website",
+      github: "https://github.com/NadaJoobeur/ISIMM_Website",
     },
   ];
 
   const categories = [
     { id: "all", label: "All Projects" },
     { id: "web", label: "Web Apps" },
-    { id: "desktop", label: "Desktop Apps" },
+    { id: "devops", label: "DevOps" },
     { id: "ai", label: "AI/ML" },
+    { id: "desktop", label: "Desktop Apps" },
+    { id: "tools", label: "Tools" },
   ];
 
-  const filteredProjects = filter === "all" 
-    ? projects 
+  const filteredProjects = filter === "all"
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
@@ -104,8 +153,8 @@ const Projects = () => {
               className="glass-effect rounded-lg overflow-hidden glow-hover animate-slide-up group"
             >
               <div className="relative h-48 bg-muted overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-2"
                 />
@@ -117,14 +166,6 @@ const Projects = () => {
                     className="p-2 rounded-full bg-primary/20 backdrop-blur-sm hover:bg-primary/40 transition-colors"
                   >
                     <Github className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-primary/20 backdrop-blur-sm hover:bg-primary/40 transition-colors"
-                  >
-                    <ExternalLink className="w-5 h-5" />
                   </a>
                 </div>
               </div>
