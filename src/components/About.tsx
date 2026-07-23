@@ -37,13 +37,10 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-left">
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              I'm a Software Engineering graduate and full stack developer with a professional command of the development lifecycle end to end. My focus is on backend development: designing clean, maintainable architectures and structuring APIs around clear domain boundaries.
-            </p>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              That same reasoning extends to DevOps and to integrating AI into real systems, not just calling a model, but designing the pipeline around it.
+              I'm a Software Engineering graduate and full stack developer, currently looking for a developer position where I can keep growing. My focus is on backend development, clean architectures, and APIs, with hands-on experience in DevOps and AI integration.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Outside of coding, I enjoy participating in hackathons, contributing to open-source projects, and collaborating with others in the tech community.
+              Outside of coding, I enjoy hackathons and contributing to open-source projects.
             </p>
           </div>
 

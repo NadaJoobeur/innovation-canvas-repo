@@ -52,7 +52,7 @@ const Projects = () => {
       description: "Web-based platform for end-to-end medical data processing. Supports tabular data & medical images with experiment tracking.",
       image: "/Medical-Research-Automation-Platform.png",
       technologies: ["React.js", "Flask", "MySQL", "Machine Learning"],
-      category: "ai",
+      category: "web",
       github: "https://github.com/NadaJoobeur/Medical-Research-Automation-Platform",
     },
     {
@@ -60,7 +60,7 @@ const Projects = () => {
       description: "An AI-powered platform that assists non-specialists in interpreting EEG signals, developed in collaboration with doctors at Sahloul Hospital, enabling remote validation by a neurophysiologist.",
       image: "/AI-Powered-EEG-Triage-System.png",
       technologies: ["React.js", "Flask", "MySQL", "Machine Learning", "Healthcare"],
-      category: "ai",
+      category: "web",
       github: "https://github.com/NadaJoobeur/AI-Powered-EEG-Triage-System",
     },
     {
@@ -92,16 +92,8 @@ const Projects = () => {
       description: "Traffic simulation engine modeling roads, vehicles, and traffic lights, with statistical analysis and congestion detection. Published on PyPI, tested with pytest, and integrated with CI via GitHub Actions.",
       image: "/simulateur-trafic.png",
       technologies: ["Python", "Cython", "pytest", "GitHub Actions"],
-      category: "tools",
-      github: "https://github.com/NadaJoobeur/simulateur-trafic",
-    },
-    {
-      title: "ISIMM Website",
-      description: "Static showcase website for the ISIMM institute: departments, academic programs, events, and resources.",
-      image: "/ISIMM_Website.png",
-      technologies: ["React.js", "Tailwind", "Node.js", "MySQL"],
       category: "web",
-      github: "https://github.com/NadaJoobeur/ISIMM_Website",
+      github: "https://github.com/NadaJoobeur/simulateur-trafic",
     },
   ];
 
@@ -111,7 +103,6 @@ const Projects = () => {
     { id: "devops", label: "DevOps" },
     { id: "ai", label: "AI/ML" },
     { id: "desktop", label: "Desktop Apps" },
-    { id: "tools", label: "Tools" },
   ];
 
   const filteredProjects = filter === "all"

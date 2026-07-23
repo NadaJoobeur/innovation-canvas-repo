@@ -26,6 +26,7 @@ const Experience = () => {
         "Designed and implemented a platform to standardize vehicle insurance workflows",
         "Built modular and reusable code to accelerate future insurance projects",
         "Collaborated with team members to ensure code quality and maintainability",
+        "Participated in requirement analysis and technical decisions within an agile team",
       ],
       technologies: ["React", "Node.js", "TypeScript", "PostgreSQL","chakra-ui","REST API" ],
     },
