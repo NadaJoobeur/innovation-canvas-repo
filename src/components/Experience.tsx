@@ -2,6 +2,20 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
+    {
+      title: "Software Engineering Intern – End-of-Studies Project",
+      company: "Capgemini Engineering",
+      location: "El Ghazala Technology Park, Ariana, Tunisia",
+      period: "February - May 2026",
+      description: "Designed and developed PharmaLink, a full-stack patient-pharmacy platform enabling medication search, reservations, and automated prescription reading through a dedicated OCR/LLM microservice, deployed on AWS through an Infrastructure-as-Code pipeline.",
+      responsibilities: [
+        "Designed and implemented the Angular frontend and Spring Boot backend for a multi-role healthcare platform (patients, pharmacists, admins)",
+        "Built an OCR/LLM microservice with FastAPI to extract and validate prescription data from photos",
+        "Provisioned and deployed the full infrastructure on AWS (EC2 Auto Scaling Group, Application Load Balancer, RDS) using Terraform",
+        "Containerized services with Docker and structured the end-to-end deployment workflow",
+      ],
+      technologies: ["Angular", "Spring Boot", "FastAPI", "PostgreSQL", "Terraform", "AWS", "Docker"],
+    },
       {
       title: "Software Engineering Intern",
       company: "Proxym-IT Group",

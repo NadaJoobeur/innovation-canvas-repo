@@ -1,16 +1,16 @@
-import { Code2, Rocket, Users, Award } from "lucide-react";
+import { Code2, Server, Users, Award } from "lucide-react";
 
 const About = () => {
   const highlights = [
     {
       icon: Code2,
-      title: "Clean Code",
-      description: "Writing maintainable and scalable solutions",
+      title: "Clean Architecture",
+      description: "Designing maintainable, well-structured systems",
     },
     {
-      icon: Rocket,
-      title: "Innovation",
-      description: "Always exploring new technologies",
+      icon: Server,
+      title: "Backend Focus",
+      description: "APIs and services that hold up in production",
     },
     {
       icon: Users,
@@ -19,8 +19,8 @@ const About = () => {
     },
     {
       icon: Award,
-      title: "Excellence",
-      description: "Committed to delivering quality",
+      title: "Reliability",
+      description: "Committed to delivering quality work",
     },
   ];
 
@@ -37,13 +37,13 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-left">
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-             I'm a third-year Software Engineering student passionate about building web applications that are both scalable and high-performance, often integrating AI solutions. I enjoy working on projects from start to finish—from design to deployment—and love finding creative, efficient ways to solve problems.
+              I'm a Software Engineering graduate and full stack developer with a professional command of the development lifecycle end to end. My focus is on backend development: designing clean, maintainable architectures and structuring APIs around clear domain boundaries.
             </p>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-             Technology has always driven my curiosity, and I’m constantly looking to learn, grow, and explore new tools and ideas.
+              That same reasoning extends to DevOps and to integrating AI into real systems, not just calling a model, but designing the pipeline around it.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-             Outside of coding, I enjoy participating in hackathons, contributing to open-source projects, and collaborating with others in the tech community.
+              Outside of coding, I enjoy participating in hackathons, contributing to open-source projects, and collaborating with others in the tech community.
             </p>
           </div>
 

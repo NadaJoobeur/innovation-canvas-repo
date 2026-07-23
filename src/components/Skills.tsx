@@ -1,87 +1,36 @@
-import { useEffect, useState } from "react";
-import { Code2, Database, Palette, Server, Smartphone, Cloud ,Brain,Code} from "lucide-react";
+import { Code2, Database, Server, Cloud, Brain, Code } from "lucide-react";
 
 const Skills = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    const element = document.getElementById("skills");
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
-  }, []);
-
   const skillCategories = [
     {
       icon: Code2,
       title: "Frontend Development",
-      skills: [
-        { name: "React ", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "chakra_ui", level: 80 },
-      ],
+      skills: ["Angular", "React", "TypeScript", "Tailwind CSS", "Chakra UI"],
     },
     {
       icon: Server,
       title: "Backend Development",
-      skills: [
-        { name: "Node.js / Express", level: 85 },
-        { name: "Python / Flask", level: 80 },
-        { name: "RESTful APIs", level: 90 },
-        { name: "GraphQL", level: 75 },
-      ],
+      skills: ["Spring Boot", "Node.js / Express", "Flask", "FastAPI", "RESTful APIs"],
     },
     {
       icon: Database,
-      title: "Database & Tools",
-      skills: [
-        { name: "PostgreSQL / MySQL", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "Hadoop/Apache Spark", level: 70 },
-        { name: "Docker", level: 75 },
-      ],
+      title: "Databases",
+      skills: ["PostgreSQL", "MySQL"],
     },
     {
       icon: Cloud,
       title: "Cloud & DevOps",
-      skills: [
-        { name: "AWS ", level: 80 },
-        { name: "CI/CD Pipelines", level: 75 },
-        { name: "Kubernetes", level: 70 },
-        { name: "Git / GitHub", level: 95 },
-      ],
+      skills: ["Terraform", "AWS", "Docker", "Kubernetes", "GitHub Actions", "Git"],
     },
     {
       icon: Brain,
-      title: "ML & DL",
-      skills: [
-        { name: "CNNs", level: 85 },
-        { name: " LSTM", level: 70 },
-        { name: "TensorFlow / Keras", level: 75 },
-        { name: " U-Net architectures", level: 85 },
-      ],
+      title: "AI & Machine Learning",
+      skills: ["Scikit-learn", "TensorFlow / Keras", "U-Net architectures", "OpenCV", "LLM/VLM integration"],
     },
     {
-      icon:Code,
-      title: "Programming",
-      skills: [
-        { name: "Java", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "C/C++", level: 95 },
-        { name: "R", level: 85 },
-      ],
+      icon: Code,
+      title: "Programming Languages",
+      skills: ["Java", "Python", "TypeScript", "JavaScript"],
     },
   ];
 
@@ -94,7 +43,7 @@ const Skills = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mb-4"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise and proficiency levels
+            Technologies and tools I work with, grounded in real projects and professional experience
           </p>
         </div>
 
@@ -112,23 +61,14 @@ const Skills = () => {
                 <h3 className="text-xl font-bold">{category.title}</h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: isVisible ? `${skill.level}%` : "0%",
-                          transitionDelay: `${catIndex * 100 + skillIndex * 50}ms`,
-                        }}
-                      ></div>
-                    </div>
-                  </div>
+                  <span
+                    key={skillIndex}
+                    className="px-3 py-1.5 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
