@@ -35,7 +35,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4 animate-fade-in">
+        <div className="grid sm:grid-cols-3 gap-4 animate-fade-in">
           {contactInfo.map((item, index) => (
             <a
               key={index}
