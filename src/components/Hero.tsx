@@ -30,82 +30,78 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Ambient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/15 rounded-full blur-3xl animate-pulse-glow"></div>
-        
+        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
       </div>
 
       <div className="container mx-auto px-4 z-10">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
-         
-          
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 tracking-tight">
+        <div className="max-w-3xl mx-auto text-center animate-fade-in">
+          <h1 className="text-4xl md:text-6xl font-semibold mb-3 tracking-tight">
             Hi, I'm <span className="gradient-text">Nada</span>
           </h1>
-          
-          <div className="text-3xl md:text-5xl font-bold mb-10 min-h-[60px]">
+
+          <div className="text-lg md:text-2xl font-medium mb-6 min-h-[36px] text-muted-foreground">
             <span className="gradient-text">{displayedText}</span>
-            <span className="animate-pulse">|</span>
+            <span className="animate-pulse text-primary/70">|</span>
           </div>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+
+          <p className="text-sm md:text-base text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
             Passionate about creating innovative solutions and building amazing software experiences. Specialized in full-stack development with a focus on modern technologies.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg" 
-              className="bg-gradient-primary hover:shadow-neon transition-all duration-500 hover:scale-105 animate-pulse-glow group"
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
+            <Button
+              size="default"
+              className="bg-gradient-primary hover:opacity-90 transition-opacity"
               onClick={openCV}
             >
-              <span className="group-hover:animate-wiggle inline-block">View My Resume</span>
+              View My Resume
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="default"
               variant="outline"
-              className="glass-effect hover:bg-primary/20 hover:border-primary transition-all duration-500 hover:scale-105"
+              className="glass-effect hover:border-primary/50 transition-colors"
               onClick={() => scrollToSection("contact")}
             >
               Get In Touch
             </Button>
           </div>
-          
-          <div className="flex gap-6 justify-center">
-            <a 
-              href="https://github.com/NadaJoobeur" 
-              target="_blank" 
+
+          <div className="flex gap-4 justify-center">
+            <a
+              href="https://github.com/NadaJoobeur"
+              target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon group"
+              className="p-2.5 rounded-full glass-effect glow-hover cursor-pointer"
             >
-              <Github className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <Github className="w-4 h-4" />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/nada-joobeur-704461241/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/nada-joobeur-704461241/"
+              target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon-secondary group"
+              className="p-2.5 rounded-full glass-effect glow-hover cursor-pointer"
             >
-              <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <Linkedin className="w-4 h-4" />
             </a>
-            <a 
+            <a
               href="mailto:nadajbr725@gmail.com"
-              className="p-3 rounded-full glass-effect glow-hover cursor-pointer hover:shadow-neon group"
+              className="p-2.5 rounded-full glass-effect glow-hover cursor-pointer"
             >
-              <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <Mail className="w-4 h-4" />
             </a>
           </div>
         </div>
       </div>
-      
-      <button 
+
+      <button
         onClick={() => scrollToSection("about")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer opacity-60"
         aria-label="Scroll down"
       >
-        <ArrowDown className="w-8 h-8 text-primary" />
+        <ArrowDown className="w-5 h-5 text-primary" />
       </button>
     </section>
   );
