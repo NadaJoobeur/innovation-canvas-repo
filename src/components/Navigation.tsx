@@ -40,20 +40,20 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           <a
             href="#home"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection("#home");
             }}
-            className="text-2xl font-bold gradient-text cursor-pointer"
+            className="text-base font-semibold gradient-text cursor-pointer tracking-tight"
           >
             NadaJoobeur
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -62,10 +62,10 @@ const Navigation = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="relative text-foreground/80 hover:text-primary transition-all duration-300 cursor-pointer group"
+                className="relative text-xs text-foreground/70 hover:text-primary transition-colors duration-200 cursor-pointer group"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
@@ -81,6 +81,7 @@ const Navigation = () => {
             </Button>
           </div>
         </div>
+
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (

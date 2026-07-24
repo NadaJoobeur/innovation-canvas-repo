@@ -23,33 +23,33 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-card/30">
-      <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+    <section id="contact" className="section-padding bg-card/20">
+      <div className="container mx-auto max-w-3xl">
+        <div className="text-center mb-10 animate-fade-in">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3">
             Open to <span className="gradient-text">Opportunities</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mb-4"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-12 h-0.5 bg-gradient-primary mx-auto rounded-full mb-3"></div>
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto">
             I'm actively looking for a developer position. Feel free to reach out through any of the channels below.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 animate-slide-in-left">
+        <div className="grid sm:grid-cols-2 gap-4 animate-fade-in">
           {contactInfo.map((item, index) => (
             <a
               key={index}
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="flex items-start gap-4 glass-effect p-4 rounded-lg glow-hover transition-all duration-300"
+              className="flex items-start gap-3 glass-effect p-4 rounded-lg glow-hover transition-all duration-300"
             >
-              <div className="p-3 rounded-full bg-gradient-primary shrink-0">
-                <item.icon className="w-5 h-5 text-primary-foreground" />
+              <div className="p-2 rounded-md bg-gradient-primary shrink-0">
+                <item.icon className="w-4 h-4 text-primary-foreground" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground mb-1">{item.label}</p>
-                <p className="font-medium">{item.value}</p>
+                <p className="text-xs text-muted-foreground mb-0.5">{item.label}</p>
+                <p className="text-sm font-medium">{item.value}</p>
               </div>
             </a>
           ))}

@@ -67,8 +67,8 @@ export default {
         'glow-primary': 'var(--glow-primary)',
         'glow-secondary': 'var(--glow-secondary)',
         'glow-accent': 'var(--glow-accent)',
-        'neon': '0 0 5px theme(colors.primary), 0 0 20px theme(colors.primary), 0 0 40px theme(colors.primary)',
-        'neon-secondary': '0 0 5px theme(colors.secondary), 0 0 20px theme(colors.secondary), 0 0 40px theme(colors.secondary)',
+        'neon': '0 0 12px hsl(var(--primary) / 0.25)',
+        'neon-secondary': '0 0 12px hsl(var(--secondary) / 0.25)',
       },
       keyframes: {
         "accordion-down": {
