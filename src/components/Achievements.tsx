@@ -96,92 +96,91 @@ const Achievements = () => {
 
   return (
     <section id="achievements" className="section-padding">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-10 animate-fade-in">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3">
             Achievements & <span className="gradient-text">Activities</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+          <div className="w-12 h-0.5 bg-gradient-primary mx-auto rounded-full"></div>
         </div>
 
         <Tabs defaultValue="competitions" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 glass-effect mb-8">
-            <TabsTrigger value="competitions">Competitions</TabsTrigger>
-            <TabsTrigger value="certificates">Certificates</TabsTrigger>
-            <TabsTrigger value="activities">Activities</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 glass-effect mb-6 h-9">
+            <TabsTrigger value="competitions" className="text-xs">Competitions</TabsTrigger>
+            <TabsTrigger value="certificates" className="text-xs">Certificates</TabsTrigger>
+            <TabsTrigger value="activities" className="text-xs">Activities</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="competitions" className="space-y-6">
+          <TabsContent value="competitions" className="space-y-4">
             {competitions.map((item, index) => (
               <div
                 key={index}
-                className="glass-effect p-6 rounded-lg glow-hover animate-fade-in"
+                className="glass-effect p-5 rounded-lg glow-hover animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-gradient-primary shrink-0">
-                    <Trophy className="w-6 h-6 text-primary-foreground" />
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-md bg-gradient-primary shrink-0">
+                    <Trophy className="w-4 h-4 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-bold">{item.title}</h3>
-                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
+                    <div className="flex justify-between items-start mb-1.5 gap-2">
+                      <h3 className="text-base font-semibold">{item.title}</h3>
+                      <span className="px-2 py-0.5 text-[11px] font-medium rounded-md bg-primary/10 text-primary border border-primary/20 shrink-0">
                         {item.date}
                       </span>
                     </div>
-                    <p className="text-primary font-medium mb-2">{item.position}</p>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <p className="text-primary text-sm font-medium mb-1.5">{item.position}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </div>
             ))}
           </TabsContent>
 
-         <TabsContent value="certificates">
-  <div className="grid md:grid-cols-2 gap-6">
-    {certificates.map((cert, index) => (
-      <div
-        key={index}
-        className="glass-effect p-6 rounded-lg glow-hover animate-fade-in cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
-        style={{ animationDelay: `${index * 0.1}s` }}
-        onClick={() => window.open(cert.lien, "_blank")} // 🔹 ouvre le PDF dans un nouvel onglet
-      >
-        <div className="flex items-start gap-4">
-          <div className="p-3 rounded-full bg-gradient-primary shrink-0">
-            <Award className="w-6 h-6 text-primary-foreground" />
-          </div>
-          <div className="flex-1">
-            <h3 className="font-bold mb-1">{cert.title}</h3>
-            <p className="text-sm text-primary mb-1">{cert.issuer}</p>
-            <p className="text-xs text-muted-foreground">{cert.date}</p>
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
-</TabsContent>
+          <TabsContent value="certificates">
+            <div className="grid md:grid-cols-2 gap-4">
+              {certificates.map((cert, index) => (
+                <div
+                  key={index}
+                  className="glass-effect p-4 rounded-lg glow-hover animate-fade-in cursor-pointer transition-transform duration-300"
+                  style={{ animationDelay: `${index * 0.08}s` }}
+                  onClick={() => window.open(cert.lien, "_blank")}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 rounded-md bg-gradient-primary shrink-0">
+                      <Award className="w-4 h-4 text-primary-foreground" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-sm font-semibold mb-0.5">{cert.title}</h3>
+                      <p className="text-xs text-primary mb-0.5">{cert.issuer}</p>
+                      <p className="text-[11px] text-muted-foreground">{cert.date}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
 
-
-          <TabsContent value="activities" className="space-y-6">
+          <TabsContent value="activities" className="space-y-4">
             {activities.map((activity, index) => (
               <div
                 key={index}
-                className="glass-effect p-6 rounded-lg glow-hover animate-fade-in"
+                className="glass-effect p-5 rounded-lg glow-hover animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-gradient-primary shrink-0">
-                    <Star className="w-6 h-6 text-primary-foreground" />
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-md bg-gradient-primary shrink-0">
+                    <Star className="w-4 h-4 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-bold">{activity.title}</h3>
-                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
+                    <div className="flex justify-between items-start mb-1.5 gap-2">
+                      <h3 className="text-base font-semibold">{activity.title}</h3>
+                      <span className="px-2 py-0.5 text-[11px] font-medium rounded-md bg-primary/10 text-primary border border-primary/20 shrink-0">
                         {activity.period}
                       </span>
                     </div>
-                    <p className="text-primary font-medium mb-2">{activity.organization}</p>
-                    <p className="text-muted-foreground">{activity.description}</p>
+                    <p className="text-primary text-sm font-medium mb-1.5">{activity.organization}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{activity.description}</p>
                   </div>
                 </div>
               </div>
