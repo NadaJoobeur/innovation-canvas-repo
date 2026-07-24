@@ -79,66 +79,66 @@ const Experience = () => {
 
   return (
     <section id="experience" className="section-padding">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-10 animate-fade-in">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3">
             Work <span className="gradient-text">Experience</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+          <div className="w-12 h-0.5 bg-gradient-primary mx-auto rounded-full"></div>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-primary hidden md:block"></div>
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-border hidden md:block"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-6">
             {experiences.map((exp, index) => (
               <div
                 key={index}
                 className="relative animate-fade-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="md:pl-20">
-                  <div className="glass-effect p-6 rounded-lg glow-hover">
+                <div className="md:pl-16">
+                  <div className="glass-effect p-5 rounded-lg glow-hover">
                     {/* Timeline dot */}
-                    <div className="absolute left-6 top-6 w-5 h-5 rounded-full bg-secondary border-4 border-background hidden md:block"></div>
+                    <div className="absolute left-[18px] top-6 w-3 h-3 rounded-full bg-primary border-2 border-background hidden md:block"></div>
 
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="p-3 rounded-full bg-gradient-primary shrink-0">
-                        <Briefcase className="w-6 h-6 text-primary-foreground" />
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className="p-2 rounded-md bg-gradient-primary shrink-0">
+                        <Briefcase className="w-4 h-4 text-primary-foreground" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
-                        <p className="text-primary font-medium mb-2">{exp.company}</p>
-                        <div className="flex flex-wrap gap-4 text-muted-foreground text-sm mb-4">
-                          <div className="flex items-center gap-2">
-                            <Calendar className="w-4 h-4" />
+                        <h3 className="text-base font-semibold mb-0.5">{exp.title}</h3>
+                        <p className="text-primary text-sm font-medium mb-1.5">{exp.company}</p>
+                        <div className="flex flex-wrap gap-3 text-muted-foreground text-xs mb-3">
+                          <div className="flex items-center gap-1.5">
+                            <Calendar className="w-3.5 h-3.5" />
                             <span>{exp.period}</span>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4" />
+                          <div className="flex items-center gap-1.5">
+                            <MapPin className="w-3.5 h-3.5" />
                             <span>{exp.location}</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground mb-4">{exp.description}</p>
+                    <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{exp.description}</p>
 
-                    <div className="space-y-2 mb-4">
+                    <div className="space-y-1.5 mb-3">
                       {exp.responsibilities.map((resp, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
-                          <span className="text-sm">{resp}</span>
+                          <div className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0"></div>
+                          <span className="text-xs text-muted-foreground leading-relaxed">{resp}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {exp.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
+                          className="px-2 py-0.5 text-[11px] font-medium rounded-md bg-primary/10 text-primary border border-primary/20"
                         >
                           {tech}
                         </span>
