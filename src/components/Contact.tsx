@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -19,12 +19,6 @@ const Contact = () => {
       label: "LinkedIn",
       value: "nada-joobeur",
       href: "https://www.linkedin.com/in/nada-joobeur-704461241/",
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Monastir, Tunisia",
-      href: "https://www.bing.com/maps/search?mepi=0%7E%7EEmbedded%7ELargeMapLink&ty=18&vdpid=7214452655249162241&v=2&sV=1&FORM=MIRE&q=Monastir%2C+Gouvernorat+Monastir%2C+Tunisie&ss=id.sid%3Ab281cb3d-bf68-e4ac-1396-284768f3912e&ppois=35.77075958251953_10.828051567077637_Monastir%2C+Gouvernorat+Monastir%2C+Tunisie_%7E&cp=35.770760%7E10.828052&lvl=16&style=r",
     },
   ];
 
