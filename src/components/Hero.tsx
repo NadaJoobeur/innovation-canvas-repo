@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
-import cv from "@/assets/cv.pdf";
+
+const RESUME_URL = "https://drive.google.com/file/d/1nWLQhKd4op9bVDlgR_tW8LR3qgBIKbtj/view?usp=sharing";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
   const fullText = "Software Engineer";
-  
+
   useEffect(() => {
     let index = 0;
     const timer = setInterval(() => {
@@ -17,7 +18,7 @@ const Hero = () => {
         clearInterval(timer);
       }
     }, 100);
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -25,7 +26,7 @@ const Hero = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
    const openCV = () => {
-    window.open(cv, "_blank");
+    window.open(RESUME_URL, "_blank");
   };
 
   return (
@@ -65,7 +66,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
             <Button
               size="sm"
-              className="bg-gradient-primary hover:opacity-90 transition-opacity px-5 h-9 text-xs font-medium tracking-wide"
+              className="bg-gradient-primary hover:opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-primary/30 active:scale-95 transition-all duration-300 px-5 h-9 text-xs font-medium tracking-wide"
               onClick={openCV}
             >
               View My Resume
@@ -73,7 +74,7 @@ const Hero = () => {
             <Button
               size="sm"
               variant="outline"
-              className="glass-effect hover:border-primary/50 transition-colors px-5 h-9 text-xs font-medium tracking-wide"
+              className="glass-effect hover:border-primary/50 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all duration-300 px-5 h-9 text-xs font-medium tracking-wide"
               onClick={() => scrollToSection("contact")}
             >
               Get In Touch

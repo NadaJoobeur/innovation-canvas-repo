@@ -11,14 +11,12 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import CustomCursor from "@/components/CustomCursor";
-import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative">
       <CustomCursor />
-      <ScrollProgress />
       <ScrollToTop />
       <ParticleBackground />
       <Navigation />

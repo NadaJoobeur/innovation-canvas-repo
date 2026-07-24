@@ -2,9 +2,22 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const navItems = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Education", href: "#education" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Languages", href: "#languages" },
+  { label: "Projects", href: "#projects" },
+  { label: "Achievements", href: "#achievements" },
+  { label: "Contact", href: "#contact" },
+];
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,17 +28,32 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Education", href: "#education" },
-    { label: "Experience", href: "#experience" },
-    { label: "Skills", href: "#skills" },
-    { label: "Languages", href: "#languages" },
-    { label: "Projects", href: "#projects" },
-    { label: "Achievements", href: "#achievements" },
-    { label: "Contact", href: "#contact" },
-  ];
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.href.replace("#", "")))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        // Trigger when a section occupies the band around the middle of the viewport,
+        // so the nav updates right as a section becomes the focal one.
+        rootMargin: "-45% 0px -50% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   const scrollToSection = (href: string) => {
     const id = href.replace("#", "");
@@ -54,20 +82,29 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
-                className="relative text-xs text-foreground/70 hover:text-primary transition-colors duration-200 cursor-pointer group"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.replace("#", "");
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
+                  className={`relative text-xs transition-colors duration-200 cursor-pointer group ${
+                    isActive ? "text-primary font-medium" : "text-foreground/70 hover:text-primary"
+                  }`}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </a>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -86,19 +123,24 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 animate-fade-in">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
-                className="block py-2 text-foreground/80 hover:text-primary transition-colors duration-300 cursor-pointer"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.replace("#", "");
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
+                  className={`block py-2 transition-colors duration-300 cursor-pointer ${
+                    isActive ? "text-primary font-medium" : "text-foreground/80 hover:text-primary"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </div>
         )}
       </div>
