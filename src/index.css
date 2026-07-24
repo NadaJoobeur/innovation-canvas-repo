@@ -94,7 +94,13 @@ All colors MUST be HSL.
                 hsl(240 10% 8%);
     background-attachment: fixed;
     font-size: 15px;
+    cursor: none;
   }
+
+  a, button, [role="button"] {
+    cursor: none;
+  }
+
 
   html {
     scroll-behavior: smooth;
