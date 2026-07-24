@@ -1,21 +1,22 @@
-import { Languages as LanguagesIcon } from "lucide-react";
-
 const Languages = () => {
   const languages = [
     {
       language: "Arabic",
       level: "Native",
       detail: "Native language",
+      flag: "🇹🇳",
     },
     {
       language: "French",
       level: "C1",
       detail: "TCF",
+      flag: "🇫🇷",
     },
     {
       language: "English",
       level: "C1 Advanced",
       detail: "EF SET",
+      flag: "🇬🇧",
     },
   ];
 
@@ -36,8 +37,8 @@ const Languages = () => {
               className="glass-effect p-5 rounded-lg glow-hover text-center animate-fade-in transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="inline-flex p-2 rounded-full bg-gradient-primary mb-3">
-                <LanguagesIcon className="w-4 h-4 text-primary-foreground" />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 border border-border/50 mb-3 text-2xl leading-none">
+                <span aria-hidden="true">{item.flag}</span>
               </div>
               <h3 className="font-medium text-sm mb-1">{item.language}</h3>
               <p className="text-primary text-xs font-medium mb-0.5">{item.level}</p>

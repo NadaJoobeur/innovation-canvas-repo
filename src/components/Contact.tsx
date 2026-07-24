@@ -9,16 +9,16 @@ const Contact = () => {
       href: "mailto:nadajbr725@gmail.com",
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "+216 29 884 210",
-      href: "tel:+21629884210",
-    },
-    {
       icon: Linkedin,
       label: "LinkedIn",
       value: "nada-joobeur",
       href: "https://www.linkedin.com/in/nada-joobeur-704461241/",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+216 29 884 210",
+      href: "tel:+21629884210",
     },
   ];
 
@@ -35,7 +35,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4 animate-fade-in">
+        <div className="grid sm:grid-cols-3 gap-4 animate-fade-in">
           {contactInfo.map((item, index) => (
             <a
               key={index}
