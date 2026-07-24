@@ -16,7 +16,7 @@ const Languages = () => {
       language: "English",
       level: "C1 Advanced",
       detail: "EF SET",
-      flag: "🇬🇧",
+      flag: "EN",
     },
   ];
 

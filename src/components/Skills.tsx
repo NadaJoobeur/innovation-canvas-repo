@@ -1,4 +1,4 @@
-import { Code2, Database, Server, Cloud, Brain, Code } from "lucide-react";
+import { Code2, Database, Server, Cloud, Brain, Code, Layers } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
@@ -15,7 +15,7 @@ const Skills = () => {
     {
       icon: Database,
       title: "Databases",
-      skills: ["PostgreSQL", "MySQL"],
+      skills: ["PostgreSQL", "MySQL", "MongoDB"],
     },
     {
       icon: Cloud,
@@ -26,6 +26,11 @@ const Skills = () => {
       icon: Brain,
       title: "AI & Machine Learning",
       skills: ["Scikit-learn", "TensorFlow / Keras", "U-Net architectures", "OpenCV", "LLM/VLM integration"],
+    },
+    {
+      icon: Layers,
+      title: "Big Data",
+      skills: ["Hadoop", "Spark"],
     },
     {
       icon: Code,
